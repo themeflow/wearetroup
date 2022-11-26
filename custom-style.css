@@ -301,65 +301,39 @@ footer {
     display: inline-block;
 }
 
-
-.to-top-wrapper {
-    padding-top: 80px;
-    z-index: 50;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    opacity: 0;
+footer .site-nav a:before {
+    content: "";
+    width: 120%;
+    transform: translateY(100%);
     transition: opacity .5s;
+    transition-delay: 0;
+    opacity: 0;
+    height: 50%;
+    background-color: #f8c90f;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    top: 39%;
+    margin-top: 4.5%;
+    transform: translate(0, -50%);
 }
 
-.to-top-wrapper .to-top {
-    background: #f8c90f;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main-nav .site-nav a:not(.logo):hover:before, footer .site-nav a:not(.logo):hover:before {
+    opacity: 1;
 }
 
-.to-top-wrapper .to-top svg {
-    transform: rotate(-180deg);
-    stroke: #000;
+@media (max-width:960px) {
+    /* footer .social-menu {
+        padding: 2rem;
+    } */
 }
+
 
 .to-top-visible .to-top-wrapper, .work-slider-container .work-slider-nav li.active:before {
     opacity: 1;
 }
 
-.main-nav {
-    position: absolute;
-    width: 100%;
-    z-index: 10000;
-}
-
-@media (max-width:960px) {
-    .main-nav {
-        position: fixed;
-        z-index: 10000;
-    }
-}
-
-.main-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    padding: 2rem;
-    position: relative;
-    z-index: 10;
-}
-
-@media (max-width:960px) {
-    .main-nav .container {
-        padding: 1rem;
-    }
-}
-
-.main-nav .container svg {
+/* .main-nav .container svg {
     overflow: visible;
 }
 
@@ -442,7 +416,7 @@ header .main-menu .sub-wrap {
     align-content: flex-end;
     justify-content: flex-end;
     width: 100%
-}
+} */
 
 button.menu-toggle {
     padding: 0;
@@ -492,15 +466,101 @@ button.menu-toggle.dark svg line {
     transform: translate(0, 0);
 }
 
-@media (max-width:960px) {
-    .title {
+header .main-menu ul li {
+    margin-bottom: .5rem;
+}
+
+header .main-menu ul a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.5vw;
+    line-height: .95;
+}
+
+/* @media (max-width:960px) {
+    header .main-menu ul a {
         font-size: 28px;
-        padding: 2rem;
     }
 }
 
-.title.fill {
-    min-height: 80vh;
+header .main-menu .menu {
+    position: relative;
+    z-index: 10;
+}
+
+header .main-menu .site-nav {
+    position: relative;
+    padding: 1.5rem 2.3rem 1.5rem 0;
+}
+
+@media (max-width:767px) {
+    header .main-menu .site-nav {
+        padding: .5rem 2.3rem 1.5rem 0;
+    }
+}
+
+header .main-menu .site-nav a {
+    font-family: recoleta;
+    display: inline-block;
+}
+
+header .main-menu .site-nav ul li {
+    padding-left: 2.3rem;
+}
+
+@media (max-width:767px) {
+    header .main-menu .site-nav ul li {
+        padding-left: 1.3rem;
+    }
+}
+
+header .main-menu .site-nav .logo {
+    margin-left: 2.3rem;
+}
+
+@media (max-width:767px) {
+    header .main-menu .site-nav .logo {
+        margin-left: 1.3rem;
+    }
+}
+
+header .main-menu .site-nav svg {
+    max-width: 5rem;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    margin-left: -.3rem;
+}
+
+header .main-menu .social-menu {
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    right: 1.75rem;
+}
+
+header .main-menu .social-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .main-menu .social-menu li {
+    padding: .5rem;
+}
+
+header .main-menu .social-menu svg {
+    width: .9rem;
+    fill: #605f5f;
+    transition: all .5s;
+} */
+
+.intro, .slick-dots li {
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .title.video {
@@ -548,7 +608,24 @@ button.menu-toggle.dark svg line {
     }
 }
 
+.title .center {
+    text-align: center;
+    margin: 0 auto;
+    line-height: 2;
+}
 
+.title a, .work-slider-container .view-all a {
+    text-transform: uppercase;
+    font-size: .6rem;
+    letter-spacing: 2px;
+}
+
+.title a {
+    color: #000;
+    margin-top: 2.8rem;
+    font-family: "proxima-nova";
+    font-weight: 100;
+}
 
 .work-slider-container {
     height: 80vh;
